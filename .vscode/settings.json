@@ -1,0 +1,17 @@
+{
+    "git.autofetch": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html",
+        "specialLanguages": "vue"
+    },
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    }
+}
