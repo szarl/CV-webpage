@@ -4,13 +4,14 @@ export default defineNuxtConfig({
     app: {
         pageTransition: { name: 'page', mode: 'out-in' },
         head: {
-            title: 'Karol Rutkowski - Full Stack Developer',
+            title: 'Karol Rutkowski - Software Engeneer',
             meta: [
                 { charset: 'utf-8' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
                 {
                     name: 'description',
-                    content: 'Karol Rutkowski - Full Stack Developer. I am a full stack developer with a passion for building beautiful and functional user experiences.',
+                    content:
+                        'Karol Rutkowski - Software Engeneer. I am a Software Engeneer and full stack developer with a passion for building optimized code and beautiful and functional user experiences.',
                 },
             ],
         },

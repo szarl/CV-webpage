@@ -1,10 +1,5 @@
 <template>
     <div class="education">
-        <div class="d-flex align-center mb-3">
-            <v-divider class="mr-2" />
-            <h2>Education</h2>
-            <v-divider class="ml-2" />
-        </div>
         <v-timeline line-color="white">
             <v-timeline-item v-for="education in educations" dot-color="#75edae">
                 <template v-slot:opposite>

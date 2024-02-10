@@ -1,7 +1,7 @@
 <template>
     <v-footer class="text-center d-flex flex-column">
         <div>
-            <v-btn v-for="icon in icons" :key="icon" class="mx-4" :icon="icon" variant="text"></v-btn>
+            <v-btn v-for="icon in socials" :key="icon.name" class="mx-4" :icon="icon.icon" variant="text" @click="redirectToFramework(icon.url)" />
         </div>
         <v-divider color="white" />
         <div>{{ currentYear }} — <strong>Karol Rutkowski</strong></div>
@@ -10,7 +10,10 @@
 
 <script setup lang="ts">
 const currentYear = new Date().getFullYear();
-const icons = ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'];
+const socials = me.socials;
+function redirectToFramework(link: string) {
+    window.open(link, '_blank');
+}
 </script>
 
 <style scoped lang="scss">
