@@ -22,6 +22,9 @@ class Social {
 class Experience extends TimePeriod {
     company: string;
     position: string;
+    description: string;
+    location: string;
+    frequency: string;
     constructor(data?: Partial<Experience>) {
         super();
         Object.assign(this, data);
@@ -72,6 +75,12 @@ export const me = {
             link: 'https://vuetifyjs.com/',
         }),
         new Skill({
+            name: 'PWA',
+            description: 'Progressive Web App',
+            icon: 'mdi-progress-wrench',
+            link: 'https://web.dev/progressive-web-apps/',
+        }),
+        new Skill({
             name: 'SCSS',
             description: 'CSS preprocessor',
             icon: 'mdi-sass',
@@ -115,16 +124,63 @@ export const me = {
         }),
     ],
     experiences: [
-        {
-            company: 'Company A',
-            position: 'Full Stack Developer',
-            duration: '2018 - Present',
-        },
-        {
-            company: 'Company B',
-            position: 'Frontend Developer',
-            duration: '2016 - 2018',
-        },
+        new Experience({
+            company: 'Ulan Software',
+            position: 'Full Stack developer',
+            description: `<p><a href="https://ulansoftware.com/portfolio/teamo" target="_blank">Detail description to a project where I took a part</a>&nbsp(for Ikea) </p>
+            <p> <a href="https://bowwe.com/" target="_blank">Another big project in which I had contributed</a>&nbsp(Web creator)</p>`,
+            location: 'Wroclaw, Poland',
+            startTime: new Date('2021-11-01'),
+            endTime: new Date('2024-1-31'),
+        }),
+        new Experience({
+            company: 'Sotis',
+            location: 'Clermont-Ferrand, France',
+            position: 'Air ventilation fitter',
+            description: 'Installing air filters in the new factory, comunicating with the boss in French',
+            startTime: new Date('2021-07-01'),
+            endTime: new Date('2021-09-24'),
+        }),
+        new Experience({
+            company: 'Hengst Filtration Poland (automotive)',
+            location: 'Gogolin, Poland',
+            position: 'Helpdesk Administrator',
+            description: 'Office administartion, Developed local production app, first steps into OOP with Django and automatic tests with Selenium',
+            startTime: new Date('2020-10-01'),
+            endTime: new Date('2021-06-01'),
+        }),
+        new Experience({
+            company: 'Polaris Quads',
+            location: 'Opole, Poland',
+            position: 'Production Fitter',
+            description: 'Installing and configuring machines',
+            startTime: new Date('2020-07-01'),
+            endTime: new Date('2020-08-01'),
+        }),
+        new Experience({
+            company: '-',
+            location: 'Opole, Poland',
+            position: 'Construction worker',
+            description: 'Private flat renovation, commanding the team of 4 people',
+            startTime: new Date('2018-09-01'),
+            endTime: new Date('2018-12-01'),
+        }),
+        new Experience({
+            company: 'Bluesoft',
+            location: 'Krapkowice, Poland',
+            position: 'Construction assistant',
+            description: 'Renovation of staircases',
+            startTime: new Date('2018-07-01'),
+            endTime: new Date('2018-8-01'),
+        }),
+        new Experience({
+            company: 'Bluesoft | Science and Technology Park in Opole',
+            location: 'Opole, Poland',
+            position: 'Technical Assistant',
+            description: 'Soldering capacitors and other components on the integrated circuit',
+            startTime: new Date('2015-07-01'),
+            endTime: new Date('2015-08-01'),
+        }),
     ],
     educations: [
         new Education({

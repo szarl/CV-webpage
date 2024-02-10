@@ -45,6 +45,7 @@ const links = [
     { text: 'Experience', to: '/experience' },
     { text: 'Education', to: '/education' },
     { text: 'Skills', to: '/skills' },
+    { text: 'Blog', to: '/blog' },
     { text: 'Contact', to: '/contact' },
 ];
 const isMobile = computed(() => display.value.mobile);

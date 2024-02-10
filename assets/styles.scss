@@ -39,3 +39,9 @@ html {
     opacity: 0;
     filter: blur(1rem);
 }
+
+.flex-small-column {
+    @media (max-width: 576px) {
+        flex-direction: column !important;
+    }
+}

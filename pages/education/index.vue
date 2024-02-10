@@ -3,9 +3,9 @@
         <v-timeline line-color="white">
             <v-timeline-item v-for="education in educations" dot-color="#75edae">
                 <template v-slot:opposite>
-                    <h3>
+                    <h4>
                         {{ education.monthDuration }}
-                    </h3>
+                    </h4>
                 </template>
                 <div class="text-center">
                     <h2 class="greenLighterText">{{ education.institution }}</h2>
@@ -21,7 +21,6 @@ const educations = me.educations;
 <style scoped>
 .education {
     padding: 20px;
-    color: white;
     height: 100%;
 }
 </style>

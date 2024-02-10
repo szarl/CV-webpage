@@ -2,12 +2,16 @@
     <v-app class="main">
         <HeaderComp />
         <v-main>
-            <div class="d-flex align-center mb-3">
+            <div class="d-flex align-center mb-3" style="height: 36px">
                 <v-divider class="mr-3" />
-                <h2 class="text-no-wrap">{{ fullRoute }}</h2>
+                <Transition name="page">
+                    <h2 v-if="bounce" class="text-no-wrap">{{ fullRoute }}</h2>
+                </Transition>
                 <v-divider class="ml-3" />
             </div>
-            <slot />
+            <div class="main_slot">
+                <slot />
+            </div>
         </v-main>
         <FooterComp />
     </v-app>
@@ -16,14 +20,25 @@
 const defaultText = 'Long story short';
 const route = ref(useRoute());
 const fullRoute = computed(() => (route.value.name === 'index' ? defaultText : route.value.name.charAt(0).toUpperCase() + route.value.name.slice(1)));
+const bounce = ref(true);
+watch(fullRoute, () => {
+    bounce.value = !bounce.value;
+    setTimeout(() => {
+        bounce.value = !bounce.value;
+    }, 300);
+});
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 @import '~/assets/variables.scss';
 .main {
     background-color: $background;
     color: white;
     .v-main {
         padding: 20px;
+    }
+    &_slot {
+        max-width: 1000px;
+        margin: auto;
     }
 }
 </style>

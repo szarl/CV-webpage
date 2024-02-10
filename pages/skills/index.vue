@@ -22,8 +22,6 @@ function redirectToFramework(link) {
 <style scoped lang="scss">
 @import '~/assets/variables.scss';
 .v-row {
-    max-width: 900px;
-    margin: auto;
     .v-card {
         width: 100%;
         padding: 12px;

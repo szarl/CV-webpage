@@ -1,5 +1,5 @@
 <template>
-    <div class="main-page">contact</div>
+    <div>contact</div>
 </template>
 
 <style scoped>
