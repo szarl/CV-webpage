@@ -5,14 +5,14 @@
             <div class="pa-2">
                 <h1>{{ me.fullName }}</h1>
                 <h2>{{ me.profession }}</h2>
-                <span> I am a Software Engeneer and Full Stack developer with a passion for building optimized code and beautiful and functional user experiences. </span>
+                <span> I am a Software Engineer and Full Stack Developer with a passion for building optimized code and functional user experiences. </span>
             </div>
         </div>
         <div class="d-flex intro_selfEntry flex-small-column mb-4">
             <div class="pa-2 text-right">
                 <h2>Chess</h2>
-                <span> I am a person who loves to spend time actively and I am a big fan of all kind of sports. </span>
-                <span>I am at the right of the photo ;) - second place in the country level.</span>
+                <span>I am a person who loves to spend time actively in a various ways.</span>
+                <span>The first person on the right is me - 2nd place in the country level.</span>
             </div>
             <v-img alt="Chess tournamet" src="/hobbies/chess/chess.webp" width="100%" max-width="350" rounded />
         </div>
@@ -21,15 +21,15 @@
             <div class="pa-2">
                 <h2>Books</h2>
                 <span
-                    >Reading has been always an important part of my life. It is one of the best way of gaining knowladge. Since I have started my studies, mostly I like reading Science Fiction,
-                    Biography and self development books.</span
+                    >Reading has been always an important part of my life. It is one of the best way of gaining knowledge. Since I have started my studies, mostly I like reading Sci-Fi, biography and
+                    self development books.</span
                 >
             </div>
         </div>
         <div class="d-flex intro_selfEntry flex-small-column">
-            <div class="pa-2 text-right">
+            <div class="pa-2 text-right mw-350">
                 <h2>Rowing</h2>
-                <span> I am a rower and I love to spend my free time on the water and not only.</span>
+                <span>Rowing became my passion since I have started my university journey. Becoming oarsmen was equal to develop self discipline and passion to do hard things.</span>
             </div>
             <v-carousel cycle hide-delimiter-background :interval="3000" hide-delimiters :show-arrows="false" class="carousel">
                 <v-carousel-item v-for="(item, i) in rowingItems" :key="i" :src="item.src" rounded cover />
@@ -69,6 +69,9 @@ const rowingItems = [
         margin-bottom: 1em;
         .carousel {
             max-width: 618px;
+        }
+        .mw-350 {
+            max-width: 350px;
         }
     }
 }

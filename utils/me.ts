@@ -78,7 +78,7 @@ class Education extends TimePeriod {
 
 export const me = {
     fullName: 'Karol Rutkowski',
-    profession: 'Software Engeneer',
+    profession: 'Software Engineer',
     city: 'Wroclaw',
     phoneNumber: '+48 692 804 506',
     email: 'karol.rutkowski.a@gmail.com',
@@ -118,6 +118,12 @@ export const me = {
             description: 'Creating server side applications in JavaScript',
             icon: 'mdi-nodejs',
             link: 'https://nodejs.org/',
+        }),
+        new Skill({
+            name: 'TypeScript',
+            description: 'Typed superset of JavaScript',
+            icon: 'mdi-language-typescript',
+            link: 'https://www.typescriptlang.org/',
         }),
         new Skill({
             name: 'Nestjs',
@@ -177,9 +183,9 @@ export const me = {
     experiences: [
         new Experience({
             company: 'Ulan Software',
-            position: 'Full Stack developer',
-            description: `<p><a class="nuxtLink" href="https://ulansoftware.com/portfolio/teamo" target="_blank">Detail description to a project where I took a part</a>&nbsp(for Ikea) </p>
-            <p> <a class="nuxtLink" href="https://bowwe.com/" target="_blank">Another big project in which I had contributed</a>&nbsp(Web creator)</p>`,
+            position: 'Full Stack Developer',
+            description: `<p><a class="nuxtLink" href="https://ulansoftware.com/portfolio/teamo" target="_blank">Detail description to a project where I took a part</a>&nbsp(Ikea) </p>
+            <p> <a class="nuxtLink" href="https://bowwe.com/" target="_blank">Another big project in which I had contributed</a>&nbsp(Web creator Bowwe)</p>`,
             location: 'Wroclaw, Poland',
             startTime: new Date('2021-11-01'),
             endTime: new Date('2024-1-31'),
@@ -188,14 +194,14 @@ export const me = {
             company: 'Sotis',
             location: 'Clermont-Ferrand, France',
             position: 'Air ventilation fitter',
-            description: 'Installing air filters in the new factory, comunicating with the boss in French',
+            description: 'Installing air filters in the new factory, provading comunication between Polish squad and french boss',
             startTime: new Date('2021-07-01'),
             endTime: new Date('2021-09-24'),
         }),
         new Experience({
             company: 'Hengst Filtration Poland (automotive)',
             location: 'Gogolin, Poland',
-            position: 'Helpdesk Administrator',
+            position: 'Helpdesk Administrator (Intership)',
             description: 'Office administartion, Developed local production app, first steps into OOP with Django and automatic tests with Selenium',
             startTime: new Date('2020-10-01'),
             endTime: new Date('2021-06-01'),
@@ -204,7 +210,7 @@ export const me = {
             company: 'Polaris Quads',
             location: 'Opole, Poland',
             position: 'Production Fitter',
-            description: 'Installing and configuring machines',
+            description: 'Installing and setting up machiner',
             startTime: new Date('2020-07-01'),
             endTime: new Date('2020-08-01'),
         }),
@@ -212,7 +218,7 @@ export const me = {
             company: '-',
             location: 'Opole, Poland',
             position: 'Construction worker',
-            description: 'Private flat renovation, commanding the team of 4 people',
+            description: 'Private flat renovation, responsible for the team of 4 people',
             startTime: new Date('2018-09-01'),
             endTime: new Date('2018-12-01'),
         }),
@@ -306,6 +312,11 @@ export const me = {
                     alt: 'Technology composition of the app in Railway',
                 }),
             ],
+        }),
+        new Project({
+            name: 'CWash',
+            repoLink1: 'https://github.com/szarl/cwash_client',
+            repoLink2: 'https://github.com/szarl/cwash-service',
         }),
     ],
     socials: [

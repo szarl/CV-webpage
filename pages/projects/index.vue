@@ -1,6 +1,6 @@
 <template>
     <div class="projects">
-        <div v-for="project in projects">
+        <div v-for="project in projects" class="mb-4">
             <h2 class="greenLighterText">{{ project.name }}</h2>
             <h3>{{ project.description }}</h3>
             <div class="d-flex justify-space-evenly mt-7 mb-7">
