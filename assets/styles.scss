@@ -15,7 +15,7 @@ html {
         border: 2px solid transparent;
         border-bottom: none;
         border-radius: 6px;
-        background-color: $greenLighter;
+        background-color: $mainGreen100;
         background-clip: content-box;
         &:hover {
             background-color: $mainGreen;
@@ -26,8 +26,19 @@ html {
     }
 }
 
+.nuxtLink {
+    text-decoration: none;
+    color: $mainGreen;
+    &.bold {
+        font-weight: bold;
+    }
+    &:hover {
+        color: $mainGreen600;
+    }
+}
+
 .greenLighterText {
-    color: $greenLighter;
+    color: $mainGreen100;
 }
 
 .page-enter-active,

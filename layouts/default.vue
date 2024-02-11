@@ -31,14 +31,29 @@ watch(fullRoute, () => {
 <style lang="scss">
 @import '~/assets/variables.scss';
 .main {
-    background-color: $background;
-    color: white;
+    color: black;
+    background-color: transparent;
     .v-main {
         padding: 20px;
     }
     &_slot {
         max-width: 1000px;
         margin: auto;
+    }
+}
+
+// SETTING UP DARK MODE AND LIGHT MODE
+.dark-mode body {
+    background-color: $background;
+    .main {
+        color: #ebf4f1;
+    }
+}
+
+.light-mode body {
+    background-color: #ebf4f1;
+    .v-app-bar {
+        background-color: $background;
     }
 }
 </style>

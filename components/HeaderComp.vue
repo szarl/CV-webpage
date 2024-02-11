@@ -1,11 +1,11 @@
 <template>
     <v-app-bar class="header" rounded>
-        <h1 class="header_title"><NuxtLink to="/">Karol Rutkowski</NuxtLink></h1>
+        <h1 class="header_title"><NuxtLink class="nuxtLink" to="/">Karol Rutkowski</NuxtLink></h1>
         <v-spacer></v-spacer>
         <nav class="header__nav">
             <ul v-if="!isMobile">
                 <li v-for="link in links">
-                    <NuxtLink class="nuxtLink" :to="link.to"> {{ link.text }}</NuxtLink>
+                    <NuxtLink class="nuxtLink bold" :to="link.to"> {{ link.text }}</NuxtLink>
                 </li>
                 <li>
                     <ClientOnly>
@@ -25,7 +25,7 @@
                 <v-list bg-color="#2c3e50">
                     <v-list-item v-for="link in links" :key="link.text" link>
                         <v-list-item-title>
-                            <NuxtLink class="nuxtLink" :to="link.to">{{ link.text }}</NuxtLink>
+                            <NuxtLink class="nuxtLink bold" :to="link.to">{{ link.text }}</NuxtLink>
                         </v-list-item-title>
                     </v-list-item>
                 </v-list>
@@ -90,14 +90,5 @@ header div {
 
 .header__nav li {
     margin-right: 1rem;
-}
-
-.nuxtLink {
-    text-decoration: none;
-    color: $mainGreen;
-    font-weight: bold;
-    &:hover {
-        color: #00dc82;
-    }
 }
 </style>

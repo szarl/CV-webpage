@@ -29,9 +29,9 @@ function redirectToFramework(link) {
         text-align: center;
         margin: 12px;
         margin: auto;
-        background-color: $mainGreen;
+        background-color: $mainGreen200;
         &:hover {
-            background-color: $greenLighter;
+            background-color: $mainGreen100;
             cursor: pointer;
             .v-chip {
                 opacity: 0.6;

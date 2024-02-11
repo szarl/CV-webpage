@@ -1,4 +1,28 @@
-import { TimePeriod } from './TimePeriod';
+class TimePeriod {
+    startTime: Date;
+    endTime: Date;
+    constructor(data?: Partial<TimePeriod>) {
+        Object.assign(this, data);
+    }
+
+    get yearDuration(): string {
+        return `${this.startTime.getFullYear()} - ${this.endTime.getFullYear()}`;
+    }
+
+    get monthDuration(): string {
+        return `${this.startTime.toLocaleString('default', { month: '2-digit' })}.${this.startTime.getFullYear()} - ${this.endTime.toLocaleString('default', { month: '2-digit' })}.${this.endTime.getFullYear()}`;
+    }
+}
+
+class GridImage {
+    cols: string;
+    imgPath: string;
+    children?: GridImage[];
+    alt: string;
+    constructor(data?: Partial<GridImage>) {
+        Object.assign(this, data);
+    }
+}
 
 class Skill {
     name: string;
@@ -15,6 +39,18 @@ class Social {
     url: string;
     icon: string;
     constructor(data?: Partial<Social>) {
+        Object.assign(this, data);
+    }
+}
+
+class Project {
+    name: string;
+    description: string;
+    repoLink1: string;
+    repoLink2: string;
+    appLink: string;
+    photos: GridImage[] = [];
+    constructor(data?: Partial<Project>) {
         Object.assign(this, data);
     }
 }
@@ -40,21 +76,12 @@ class Education extends TimePeriod {
     }
 }
 
-class Project extends TimePeriod {
-    name: string;
-    description!: string;
-    repoLink: string;
-    appLink: string;
-    photos: string[] = [];
-    constructor(data?: Partial<Project>) {
-        super();
-        Object.assign(this, data);
-    }
-}
-
 export const me = {
     fullName: 'Karol Rutkowski',
     profession: 'Software Engeneer',
+    city: 'Wroclaw',
+    phoneNumber: '+48 692 804 506',
+    email: 'karol.rutkowski.a@gmail.com',
     skills: [
         new Skill({
             name: 'Vue.js',
@@ -99,6 +126,12 @@ export const me = {
             link: 'https://nestjs.com/',
         }),
         new Skill({
+            name: 'Java',
+            description: 'Object-oriented programming language',
+            icon: 'mdi-language-java',
+            link: 'https://www.java.com/',
+        }),
+        new Skill({
             name: 'PostgreSQL',
             description: 'Open source object-relational database system',
             icon: 'mdi-database',
@@ -122,13 +155,31 @@ export const me = {
             icon: 'mdi-docker',
             link: 'https://www.docker.com/',
         }),
+        new Skill({
+            name: 'Git',
+            description: 'Version control system',
+            icon: 'mdi-git',
+            link: 'https://git-scm.com/',
+        }),
+        new Skill({
+            name: 'GitHub',
+            description: 'A platform for version control and collaboration',
+            icon: 'mdi-github',
+            link: 'github.com',
+        }),
+        new Skill({
+            name: 'GitLab',
+            description: 'A complete DevOps platform',
+            icon: 'mdi-gitlab',
+            link: 'gitlab.com',
+        }),
     ],
     experiences: [
         new Experience({
             company: 'Ulan Software',
             position: 'Full Stack developer',
-            description: `<p><a href="https://ulansoftware.com/portfolio/teamo" target="_blank">Detail description to a project where I took a part</a>&nbsp(for Ikea) </p>
-            <p> <a href="https://bowwe.com/" target="_blank">Another big project in which I had contributed</a>&nbsp(Web creator)</p>`,
+            description: `<p><a class="nuxtLink" href="https://ulansoftware.com/portfolio/teamo" target="_blank">Detail description to a project where I took a part</a>&nbsp(for Ikea) </p>
+            <p> <a class="nuxtLink" href="https://bowwe.com/" target="_blank">Another big project in which I had contributed</a>&nbsp(Web creator)</p>`,
             location: 'Wroclaw, Poland',
             startTime: new Date('2021-11-01'),
             endTime: new Date('2024-1-31'),
@@ -218,9 +269,43 @@ export const me = {
         new Project({
             name: 'Apartment Management System',
             description: 'App which makes it easier to manage apartments',
-            startTime: new Date('2020-10-01'),
-            endTime: new Date('2021-06-30'),
-            repoLink: '',
+            repoLink1: 'https://github.com/szarl/asm-client',
+            repoLink2: 'https://github.com/szarl/asm-service',
+            appLink: 'https://asm-client-production.up.railway.app/',
+            photos: [
+                new GridImage({
+                    cols: '8',
+                    imgPath: '/projects/asm/dashboard.webp',
+                    alt: 'Dashboard of the app',
+                }),
+                new GridImage({
+                    cols: '4',
+                    imgPath: '/projects/asm/menu.webp',
+                    alt: 'Hamburger menu of the app',
+                }),
+                new GridImage({
+                    cols: '6',
+                    imgPath: '/projects/asm/flat-details.webp',
+                    alt: 'Flat details page with some awsome futures',
+                    children: [
+                        new GridImage({
+                            cols: '12',
+                            imgPath: '/projects/asm/adding-new-fee.webp',
+                            alt: 'Adding new fee to the flat',
+                        }),
+                        new GridImage({
+                            cols: '12',
+                            imgPath: '/projects/asm/rates.webp',
+                            alt: 'Rates of the flat',
+                        }),
+                    ],
+                }),
+                new GridImage({
+                    cols: '8',
+                    imgPath: '/projects/asm/stack.webp',
+                    alt: 'Technology composition of the app in Railway',
+                }),
+            ],
         }),
     ],
     socials: [
