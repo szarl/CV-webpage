@@ -23,7 +23,6 @@ const experiences = me.experiences;
 
 <style scoped>
 .experience {
-    padding: 20px;
     height: 100%;
 }
 </style>

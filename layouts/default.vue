@@ -55,5 +55,8 @@ watch(fullRoute, () => {
     .v-app-bar {
         background-color: $background;
     }
+    .greenLighterText {
+        color: $mainGreen;
+    }
 }
 </style>

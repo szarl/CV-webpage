@@ -10,26 +10,34 @@
                 <li>
                     <ClientOnly>
                         <v-btn :icon="isDark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'" aria-label="Theme" @click="isDark = !isDark" :theme="isDark ? 'light' : 'dark'" color="#75edae" />
-                        <template #fallback>
-                            <div class="w-8 h-8" />
-                        </template>
                     </ClientOnly>
                 </li>
             </ul>
-            <v-menu v-else offset-y>
-                <template v-slot:activator="{ props }">
-                    <v-btn icon v-bind="props" color="#75edae">
-                        <v-icon>mdi-menu</v-icon>
-                    </v-btn>
-                </template>
-                <v-list bg-color="#2c3e50">
-                    <v-list-item v-for="link in links" :key="link.text" link>
-                        <v-list-item-title>
-                            <NuxtLink class="nuxtLink bold" :to="link.to">{{ link.text }}</NuxtLink>
-                        </v-list-item-title>
-                    </v-list-item>
-                </v-list>
-            </v-menu>
+            <div v-else>
+                <ClientOnly>
+                    <v-btn
+                        :icon="isDark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'"
+                        aria-label="Theme"
+                        @click="isDark = !isDark"
+                        :theme="isDark ? 'light' : 'dark'"
+                        color="#75edae"
+                        class="modeButton" />
+                </ClientOnly>
+                <v-menu offset-y>
+                    <template v-slot:activator="{ props }">
+                        <v-btn icon v-bind="props" color="#75edae">
+                            <v-icon>mdi-menu</v-icon>
+                        </v-btn>
+                    </template>
+                    <v-list bg-color="#2c3e50">
+                        <v-list-item v-for="link in links" :key="link.text" link>
+                            <v-list-item-title>
+                                <NuxtLink class="nuxtLink bold" :to="link.to">{{ link.text }}</NuxtLink>
+                            </v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+            </div>
         </nav>
     </v-app-bar>
 </template>
@@ -75,6 +83,9 @@ const isDark = computed({
         a {
             text-decoration: none !important;
         }
+    }
+    .modeButton {
+        margin-right: -10px;
     }
 }
 

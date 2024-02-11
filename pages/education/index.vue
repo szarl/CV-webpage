@@ -20,7 +20,6 @@ const educations = me.educations;
 </script>
 <style scoped>
 .education {
-    padding: 20px;
     height: 100%;
 }
 </style>
