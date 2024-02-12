@@ -29,6 +29,7 @@ class Skill {
     description: string;
     icon: string;
     link: string;
+    stars: number;
     constructor(data?: Partial<Skill>) {
         Object.assign(this, data);
     }
@@ -88,96 +89,126 @@ export const me = {
             description: 'Popular front end framework',
             icon: 'mdi-vuejs',
             link: 'https://vuejs.org/',
+            stars: 4,
         }),
         new Skill({
             name: 'Nuxt.js',
             description: 'Framework for creating Vue.js applications',
             icon: 'mdi-nuxt',
             link: 'https://nuxt.com/',
+            stars: 3,
         }),
         new Skill({
             name: 'Vuetify',
             description: 'Material Design Component Framework for Vue.js',
             icon: 'mdi-vuetify',
             link: 'https://vuetifyjs.com/',
+            stars: 4,
         }),
         new Skill({
             name: 'PWA',
             description: 'Progressive Web App',
             icon: 'mdi-progress-wrench',
             link: 'https://web.dev/progressive-web-apps/',
+            stars: 2,
         }),
         new Skill({
             name: 'SCSS',
             description: 'CSS preprocessor',
             icon: 'mdi-sass',
             link: 'https://sass-lang.com/',
+            stars: 3,
         }),
         new Skill({
             name: 'Node.js',
             description: 'Creating server side applications in JavaScript',
             icon: 'mdi-nodejs',
             link: 'https://nodejs.org/',
+            stars: 3,
+        }),
+        new Skill({
+            name: 'npm',
+            description: 'Node Package Manager',
+            icon: 'mdi-npm',
+            link: 'https://www.npmjs.com/',
+            stars: 4,
         }),
         new Skill({
             name: 'TypeScript',
             description: 'Typed superset of JavaScript',
             icon: 'mdi-language-typescript',
             link: 'https://www.typescriptlang.org/',
+            stars: 4,
         }),
         new Skill({
             name: 'Nestjs',
             description: 'A progressive Node.js framework for building efficient, reliable and scalable server-side applications',
             icon: 'mdi-server-network',
             link: 'https://nestjs.com/',
+            stars: 4,
+        }),
+        new Skill({
+            name: 'Jest',
+            description: 'JavaScript testing framework with a focus on simplicity',
+            icon: 'mdi-play-network-outline',
+            link: 'https://jestjs.io/',
+            stars: 4,
         }),
         new Skill({
             name: 'Java',
             description: 'Object-oriented programming language',
             icon: 'mdi-language-java',
             link: 'https://www.java.com/',
+            stars: 2,
         }),
         new Skill({
             name: 'PostgreSQL',
             description: 'Open source object-relational database system',
             icon: 'mdi-database',
             link: 'https://www.postgresql.org/',
+            stars: 4,
         }),
         new Skill({
             name: 'MySQL',
             description: 'Open-source relational database management system',
             icon: 'mdi-database',
             link: 'https://www.mysql.com/',
+            stars: 2,
         }),
         new Skill({
             name: 'TypeOrm',
             description: 'An Object-Relational Mapping library',
             icon: 'mdi-database-settings',
             link: 'https://typeorm.io/',
+            stars: 3,
         }),
         new Skill({
             name: 'Docker',
             description: 'A platform for building, sharing and running applications',
             icon: 'mdi-docker',
             link: 'https://www.docker.com/',
+            stars: 3,
         }),
         new Skill({
             name: 'Git',
             description: 'Version control system',
             icon: 'mdi-git',
             link: 'https://git-scm.com/',
+            stars: 5,
         }),
         new Skill({
             name: 'GitHub',
             description: 'A platform for version control and collaboration',
             icon: 'mdi-github',
             link: 'github.com',
+            stars: 4,
         }),
         new Skill({
             name: 'GitLab',
             description: 'A complete DevOps platform',
             icon: 'mdi-gitlab',
             link: 'gitlab.com',
+            stars: 4,
         }),
     ],
     experiences: [
@@ -339,6 +370,32 @@ export const me = {
             name: 'Twitter',
             url: 'https://twitter.com/szarl',
             icon: 'mdi-twitter',
+        }),
+    ],
+    languages: [
+        new Skill({
+            name: 'Polish',
+            description: 'Native',
+            icon: 'mdi-flag-outline',
+            stars: 5,
+        }),
+        new Skill({
+            name: 'English',
+            description: 'Advance - daily usage',
+            icon: 'mdi-flag-outline',
+            stars: 4,
+        }),
+        new Skill({
+            name: 'French',
+            description: 'A2/B1 - used also as a working language',
+            icon: 'mdi-flag-outline',
+            stars: 3,
+        }),
+        new Skill({
+            name: 'Spanish',
+            description: 'A2 - participed and learnt during Erasmus',
+            icon: 'mdi-flag-outline',
+            stars: 2,
         }),
     ],
 };
