@@ -1,16 +1,24 @@
 class TimePeriod {
     startTime: Date;
-    endTime: Date;
+    endTime: Date | string;
     constructor(data?: Partial<TimePeriod>) {
         Object.assign(this, data);
     }
 
+    get endTimeAsString(): string {
+        if (typeof this.endTime === 'string') {
+            return this.endTime;
+        }
+
+        return this.endTime.getFullYear().toString();
+    }
+
     get yearDuration(): string {
-        return `${this.startTime.getFullYear()} - ${this.endTime.getFullYear()}`;
+        return `${this.startTime.getFullYear()} - ${this.endTimeAsString}`;
     }
 
     get monthDuration(): string {
-        return `${this.startTime.toLocaleString('default', { month: '2-digit' })}.${this.startTime.getFullYear()} - ${this.endTime.toLocaleString('default', { month: '2-digit' })}.${this.endTime.getFullYear()}`;
+        return `${this.startTime.toLocaleString('default', { month: '2-digit' })}.${this.startTime.getFullYear()} - ${this.endTime.toLocaleString('default', { month: '2-digit' })}.${this.endTimeAsString}`;
     }
 }
 
@@ -127,7 +135,7 @@ export const me = {
             stars: 3,
         }),
         new Skill({
-            name: 'npm',
+            name: 'npm/pnpm',
             description: 'Node Package Manager',
             icon: 'mdi-npm',
             link: 'https://www.npmjs.com/',
@@ -138,6 +146,13 @@ export const me = {
             description: 'Typed superset of JavaScript',
             icon: 'mdi-language-typescript',
             link: 'https://www.typescriptlang.org/',
+            stars: 4,
+        }),
+        new Skill({
+            name: 'Express.js',
+            description: 'Web application framework for Node.js',
+            icon: 'mdi-server-network',
+            link: 'https://expressjs.com/',
             stars: 4,
         }),
         new Skill({
@@ -183,6 +198,13 @@ export const me = {
             stars: 3,
         }),
         new Skill({
+            name: 'Redis',
+            description: 'In-memory data structure store',
+            icon: 'mdi-database-settings',
+            link: 'https://redis.io/',
+            stars: 4,
+        }),
+        new Skill({
             name: 'Docker',
             description: 'A platform for building, sharing and running applications',
             icon: 'mdi-docker',
@@ -210,8 +232,22 @@ export const me = {
             link: 'gitlab.com',
             stars: 4,
         }),
+        new Skill({
+            name: 'Jira',
+            description: 'A proprietary issue tracking product',
+            icon: 'mdi-jira',
+            link: 'https://www.atlassian.com/software/jira',
+            stars: 3,
+        }),
     ],
     experiences: [
+        new Experience({
+            company: 'MasterBorn',
+            position: 'Support Engineer',
+            description: 'Resolving issues reported by client, creating and maintaining documentation, fixing bugs, monitoring logs',
+            startTime: new Date('2024-03-04'),
+            endTime: 'Still on :)',
+        }),
         new Experience({
             company: 'Ulan Software',
             position: 'Full Stack Developer',
@@ -273,13 +309,13 @@ export const me = {
     educations: [
         new Education({
             institution: 'Wroclaw University of Science and Technology',
-            degree: 'Master Degree of Aritificial Intelligence',
+            degree: `Master's Degree of Computer Science`,
             startTime: new Date('2024-02-28'),
             endTime: new Date('2025-06-30'),
         }),
         new Education({
             institution: 'Wroclaw University of Science and Technology',
-            degree: 'Engeneer Degree of Computer Science',
+            degree: `Engeneer's Degree of Computer Science`,
             startTime: new Date('2020-10-01'),
             endTime: new Date('2024-02-06'),
         }),
@@ -393,7 +429,7 @@ export const me = {
         }),
         new Skill({
             name: 'Spanish',
-            description: 'A2 - participed and learnt during Erasmus',
+            description: 'A2 - participed and learnt during Erasmus, certified',
             icon: 'mdi-flag-outline',
             stars: 2,
         }),
